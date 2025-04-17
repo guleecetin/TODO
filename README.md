@@ -62,9 +62,3 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Preview
 
-Here is a screenshot of the Todo App:
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/guleecetin/TODOresminii/main/todolaravel.png" width="600" alt="Todo App Screenshot">
-</p>
-
