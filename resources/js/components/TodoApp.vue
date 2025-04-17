@@ -180,7 +180,7 @@ export default {
 
             console.log('Gönderilecek veri:', this.newTodo); // Debug için
 
-            fetch('http://127.0.0.1:8000/api/todos', {
+            fetch('http://127.0.0.1:8000/todos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Todo;
 use Illuminate\Http\Request;
+use App\Models\Todo;
 
 class TodoController extends Controller
 {
@@ -13,44 +13,29 @@ class TodoController extends Controller
     }
 
     public function store(Request $request)
-{
-    $request->validate([
-        'title' => 'required|string|max:255',
-        'description' => 'nullable|string',
-        'completed' => 'boolean'
-    ]);
-
-    // Debug için
-    \Log::info('Gelen veri:', $request->all());
-
-    $todo = Todo::create($request->all());
-    
-    // Debug için
-    \Log::info('Oluşturulan todo:', $todo->toArray());
-    
-    return $todo;
-}
-
-    public function show(Todo $todo)
     {
-        return $todo;
+        $todo = new Todo();
+        $todo->title = $request->title;
+        $todo->completed = false;
+        $todo->save();
+        
+        return response()->json($todo, 201);
     }
 
-    public function update(Request $request, Todo $todo)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'completed' => 'boolean'
-        ]);
-
-        $todo->update($request->all());
-        return $todo;
+        $todo = Todo::findOrFail($id);
+        $todo->completed = $request->completed;
+        $todo->save();
+        
+        return response()->json($todo);
     }
 
-    public function destroy(Todo $todo)
+    public function destroy($id)
     {
+        $todo = Todo::findOrFail($id);
         $todo->delete();
-        return response()->json(['message' => 'Todo deleted successfully']);
+        
+        return response()->json(null, 204);
     }
 }
