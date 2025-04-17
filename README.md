@@ -60,10 +60,11 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-## My Todo App
+## Preview
 
-This project is a simple Todo application built with Laravel and Vue.js. It allows users to add, complete, and delete tasks in a clean and modern interface.
+Here is a screenshot of the Todo App:
 
-### Screenshot
+<p align="center">
+  <img src="https://raw.githubusercontent.com/guleecetin/TODOresminii/main/todolaravel.png" width="600" alt="Todo App Screenshot">
+</p>
 
-![Todo App Screenshot](https://raw.githubusercontent.com/guleecetin/TODOresminii/main/todolaravel.png)
